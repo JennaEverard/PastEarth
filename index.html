@@ -3,12 +3,28 @@
 		<link rel="stylesheet" type="text/css" href="styles/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 
+		
+		
 		<title>Past Earth</title>
 	</head>
 
 	<body>
+		
 		<h1>
 			This is Past Earth
 		</h1>
+
+		<div id="decade-selector">
+			<input type="range" min="1950" max="2020" value="2020" class="slider" id="year">
+		</div>
+
+		<div id="spotify">
+			<iframe id="spotify-iframe" src="https://open.spotify.com/embed/playlist/5khOzZrbt5Smsfsgdb4M6R" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			<p id="spotify-display">Show</p>
+		</div>
+
+		<script src="js/main.js" type="text/javascript"></script>	
+		<script src="js/slider.js" type="text/javascript"></script>
+
 	</body>
 </html>
