@@ -2,20 +2,20 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-
+		<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Hachi+Maru+Pop&family=Monoton&family=Oi&family=Press+Start+2P&family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
 	
 		<title>Past Earth</title>
 	</head>
 
 	<body>
 		
-		<h1>
+		<h1 id="appTitle">
 			This is Past Earth
 		</h1>
 
-		<div id="decade-selector">
-			<input type="range" min="1950" max="2020" value="2020" class="slider" id="year">
-		</div>
+		
 
 		<div id="spotify">
 			<iframe id="spotify-iframe" src="https://open.spotify.com/embed/playlist/5khOzZrbt5Smsfsgdb4M6R" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -24,7 +24,15 @@
 
 		<canvas id='rotatingGlobe'></canvas>
 
-
+		<div id="globe-desc">
+			<div id="decade-selector">
+				<input type="range" min="1950" max="2020" value="2020" class="slider" id="year">
+			</div>
+			<h2>Current Year:</h2>
+			<p id="current-year">2020</p>
+			<img src="">
+			<p>This text will describe the decade woot woot</p>
+		</div>
 
 
 

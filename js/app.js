@@ -117,4 +117,5 @@ function drawGlobe(oceanColor, landColor, borderColor) {
 
 window.onload = function() {
 	drawGlobe('#a8dadc', '#90be6d', '#008000');
+	alert('For best experience, please ensure that your browser is in full-screen mode!');
 };
