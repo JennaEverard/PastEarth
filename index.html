@@ -5,12 +5,12 @@
 		<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Hachi+Maru+Pop&family=Monoton&family=Oi&family=Press+Start+2P&family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
-	
+		<script src="https://cdn.zingchart.com/zingchart.min.js"></script>	
 		<title>Past Earth</title>
 	</head>
 
 	<body>
-		
+		<div id="mainbody">		
 		<h1 id="appTitle">
 			This is Past Earth
 		</h1>
@@ -33,8 +33,18 @@
 			<img src="">
 			<p>This text will describe the decade woot woot</p>
 		</div>
+		</div>
+		<div id="part2">
+			<h2>What does a sustainable and resilient city mean to you?</h2>
+			<label for="new-word">Add a Word</label>
+			<input type="text" id="new-word" name="new-word" placeholder="Your Word...">
+			<button id="word-button">Submit</button>
+			<div id="test">
+			</div>
 
-
+			<div id="word-cloud">
+			</div>
+		</div>
 
 		<script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
 		<script type='text/javascript' src='http://d3js.org/topojson.v1.min.js'></script>
