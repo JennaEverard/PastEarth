@@ -1,3 +1,4 @@
+
 var spotdisp = document.getElementById("spotify-display");
 spotdisp.addEventListener("click", function() {
 	var spotify = document.getElementById("spotify-iframe");
@@ -14,3 +15,4 @@ spotdisp.addEventListener("click", function() {
 		spotdisp.style.top = "340px";
 	}
 });
+

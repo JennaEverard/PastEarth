@@ -1,5 +1,7 @@
 body {
-	background-color: pink;
+	background-image: url("../img/2010.jpeg");
+	background-size: cover;
+	background-position: center;
 }
 
 #spotify-iframe {
@@ -24,4 +26,13 @@ body {
 
 #year {
 	width: 60%;
+}
+
+#rotatingGlobe {
+	cursor: move;
+	width: 50%;
+	padding-left: 65px;
+	padding-top: 80px;
+	background-color: #ffffffc2;
+	border-radius: 50%;
 }
