@@ -16,3 +16,45 @@ spotdisp.addEventListener("click", function() {
 	}
 });
 
+var wordbutton = document.getElementById("word-button");
+wordbutton.addEventListener("click", function() {
+	var word = document.getElementById("new-word").value;
+	if(word == '' || word.includes(' '))
+	{
+		console.log("bad entry :(");
+	}
+	else
+	{
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', "../server/db.php?value=" + word, true);
+		
+		xhr.onload = function() {
+			document.getElementById("test").innerHTML =
+this.response;
+			displaywordcloud();
+		};
+		xhr.send("value=",word);
+	}
+});
+
+function displaywordcloud() {
+	var user_words = document.getElementById('test').children;
+	var data = "";
+	for (i = 0; i < user_words.length; i++)
+	{
+		data = data + ' ' + user_words[i].innerHTML;
+	}
+	console.log(data);
+	var tomap = {
+		type: 'wordcloud',
+		options: {
+			text: data,
+		}
+	};
+	zingchart.render({
+		id: 'word-cloud',
+		data: tomap,
+		height: 400,
+		width: '100%'
+	});
+}

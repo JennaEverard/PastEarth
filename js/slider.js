@@ -2,7 +2,7 @@ var range = document.getElementById("year");
 range.oninput = function() {
 	var year = this.value;
 	document.getElementById("current-year").innerHTML = year;
-	var body = document.body;
+	var body = document.getElementById("mainbody");
 	var title = document.getElementById('appTitle');
 	var spotify = document.getElementById("spotify-iframe");
 	if (year < 1960)
