@@ -1,6 +1,6 @@
 // Based on Tutorial and Samples from Planetary.js Library!
 
-function drawGlobe(oceanColor, landColor, borderColor) {
+function drawGlobe(oceanColor, landColor, borderColor, drawPings, lat, lon) {
 
   var globe = planetaryjs.planet();
 
@@ -51,8 +51,15 @@ function drawGlobe(oceanColor, landColor, borderColor) {
     context = canvas.getContext('2d');
     context.scale(2, 2);
   }
-  // Draw that globe!
   globe.draw(canvas);
+  if(drawPings == 1)
+  {
+    setInterval(function() {
+	globe.plugins.pings.add(lon, lat, {color: 'red', ttl: 5000, angle: 20});
+    }, 150);
+  }
+  // Draw that globe!
+  //globe.draw(canvas);
 }
 // THE REST IS FUNCTIONS FROM PLANETARY.JS
 
@@ -116,6 +123,32 @@ function drawGlobe(oceanColor, landColor, borderColor) {
 
 
 window.onload = function() {
-	drawGlobe('#a8dadc', '#90be6d', '#008000');
+	drawGlobe('#a8dadc', '#90be6d', '#008000', 1, 47, -122);
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', "../server/db-view.php");
+	xhr.onload = function() {
+		document.getElementById("test").innerHTML =
+this.response;
+		var user_words =
+document.getElementById('test').children;
+		var data = "";
+		for (i = 0; i < user_words.length; i++)
+		{
+			data = data + ' ' + user_words[i].innerHTML;
+		}
+		var tomap = {
+			type: 'wordcloud',
+			options: {
+				text: data,
+			}
+		};
+		zingchart.render({
+			id: 'word-cloud',
+			data: tomap,
+			height: 400,
+			width: '100%'
+		});
+	};
+	xhr.send();
 	alert('For best experience, please ensure that your browser is in full-screen mode!');
 };
