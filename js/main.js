@@ -1,4 +1,6 @@
 
+
+
 var spotdisp = document.getElementById("spotify-display");
 spotdisp.addEventListener("click", function() {
 	var spotify = document.getElementById("spotify-iframe");
@@ -35,6 +37,11 @@ this.response;
 		};
 		xhr.send("value=",word);
 	}
+});
+
+var closebutton = document.getElementById("popup-button-2");
+	closebutton.addEventListener("click", function() {
+	document.getElementById("city-popup").style.display="none";
 });
 
 function displaywordcloud() {
